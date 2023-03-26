@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package aggregate.v1;
+
+import "animal/v1/service.proto";
+import "vehicle/v1/service.proto";
+
+option go_package = "github.com/supano/nested-message/main/pkg/proto/aggregate/v1";
+
+service AggregateService {
+    rpc GetSomeWaySomeHowIWantAnimalAndVehicleAtTheSameTime(GetSomeWaySomeHowIWantAnimalAndVehicleAtTheSameTimeRequest) returns (GetSomeWaySomeHowIWantAnimalAndVehicleAtTheSameTimeResponse) {}
+}
+
+message GetSomeWaySomeHowIWantAnimalAndVehicleAtTheSameTimeRequest {}
+message GetSomeWaySomeHowIWantAnimalAndVehicleAtTheSameTimeResponse {
+    message Animal {
+        animal.v1.Data animal = 1;
+    }
+
+    message Vehicle {
+        vehicle.v1.Data vehicle = 1;
+    }
+
+    Animal animal = 1;
+    Vehicle vehicle = 2;
+}

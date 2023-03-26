@@ -1,0 +1,110 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "aggregate/v1/service.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "AggregateService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "GetSomeWaySomeHowIWantAnimalAndVehicleAtTheSameTimeResponseAnimal": {
+      "type": "object",
+      "properties": {
+        "animal": {
+          "$ref": "#/definitions/animalv1Data"
+        }
+      }
+    },
+    "GetSomeWaySomeHowIWantAnimalAndVehicleAtTheSameTimeResponseVehicle": {
+      "type": "object",
+      "properties": {
+        "vehicle": {
+          "$ref": "#/definitions/vehiclev1Data"
+        }
+      }
+    },
+    "animalv1Data": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "numberOfLeg": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1GetSomeWaySomeHowIWantAnimalAndVehicleAtTheSameTimeResponse": {
+      "type": "object",
+      "properties": {
+        "animal": {
+          "$ref": "#/definitions/GetSomeWaySomeHowIWantAnimalAndVehicleAtTheSameTimeResponseAnimal"
+        },
+        "vehicle": {
+          "$ref": "#/definitions/GetSomeWaySomeHowIWantAnimalAndVehicleAtTheSameTimeResponseVehicle"
+        }
+      }
+    },
+    "vehiclev1Data": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "numberOfWheel": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "numberOfDoor": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    }
+  }
+}

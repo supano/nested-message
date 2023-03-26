@@ -1,0 +1,10 @@
+version: v1
+deps:
+  - buf.build/supano/dependency-animal
+  - buf.build/supano/dependency-vehicle
+breaking:
+  use:
+    - FILE
+lint:
+  use:
+    - DEFAULT

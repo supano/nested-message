@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package vehicle.v1;
+
+option go_package = "github.com/supano/nested-message/dependency-vehicle/pkg/proto/vehicle/v1";
+
+service VehicleService {
+    rpc GetVehicles(GetVehiclesRequest) returns (GetVehiclesResponse) {}
+}
+
+message Data {
+    string id = 1;
+    string name = 2;
+    int32 number_of_wheel = 3;
+    int32 number_of_door = 4;
+}
+
+message GetVehiclesRequest {}
+message GetVehiclesResponse {
+    repeated Data vehicles = 1;
+}

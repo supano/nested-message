@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package animal.v1;
+
+option go_package = "github.com/supano/nested-message/dependency-animal/pkg/proto/animal/v1";
+
+service AnimalService {
+    rpc GetAnimals(GetAnimalsRequest) returns (GetAnimalsResponse) {}
+}
+
+message Data {
+    string id = 1;
+    string name = 2;
+    int32 number_of_leg = 3;
+}
+
+message GetAnimalsRequest {}
+message GetAnimalsResponse {
+    repeated Data animals = 1;
+}
